@@ -1,0 +1,464 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --color-primary: #1e3a5f;      /* Azul institucional */
+    --color-secondary: #9b1c1c;    /* Rojo sobrio */
+    --color-light: #f5f7fa;
+    --color-dark: #1f2933;
+    --color-gray: #6b7280;
+
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: 1.7;
+    background-color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-gray);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    background: linear-gradient(
+        rgba(30, 58, 95, 0.85),
+        rgba(30, 58, 95, 0.85)
+    );
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: #e5e7eb;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #7f1616;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-alt {
+    background-color: var(--color-light);
+}
+
+/* =========================
+   LISTAS
+========================= */
+.list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-gray);
+}
+
+.list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* =========================
+   PASOS / TARJETAS
+========================= */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 6px;
+    border-left: 5px solid var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background-color: var(--color-primary);
+    color: #e5e7eb;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    color: #e5e7eb;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* =========================
+   ANIMACIÓN SUAVE FINAL
+========================= */
+.pre-animate {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.becas-logo {
+    height: 60px;
+    width: auto;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* =========================
+   PROYECTOS PAGE
+========================= */
+.proyecto-container {
+    margin-bottom: 3rem;
+}
+
+.proyecto-header {
+    margin-bottom: 2rem;
+}
+
+.proyecto-fecha {
+    font-style: italic;
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+
+.proyecto-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.proyecto-imagen {
+    position: relative;
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.proyecto-info h3 {
+    margin-top: 1.5rem;
+}
+
+.conclusiones {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-secondary);
+}
+
+.conclusiones-destacadas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.conclusion-item {
+    padding: 1.5rem;
+    background-color: var(--color-light);
+    border-radius: 6px;
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeria-item p {
+    padding: 1rem;
+    background-color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin: 0;
+}
+
+/* =========================
+   OPINIONES DE ALUMNOS
+========================= */
+.opiniones-alumnos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.opinion-item {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.opinion-texto {
+    font-style: italic;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.opinion-autor {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* =========================
+   RESPONSIVE PROYECTOS
+========================= */
+@media (max-width: 768px) {
+    .proyecto-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .conclusiones-destacadas {
+        grid-template-columns: 1fr;
+    }
+
+    .opiniones-alumnos {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+}
