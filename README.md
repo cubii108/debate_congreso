@@ -1,3 +1,1 @@
-Prueba de README.md
-
-Proyecto de Becas Europa 2026.
+Repositorio donde se aloja el sitio web "La cámara del mañana", promovido por el Proyecto Becas Europa 2026.
