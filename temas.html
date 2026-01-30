@@ -8,14 +8,23 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR CON MENÚ HAMBURGUESA RESPONSIVE -->
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo-section">
             <img src="img/becas-europa-logo.png" alt="Becas Europa" class="becas-logo">
-            <span class="logo">La Cámara del Mañana</span>
+            <span class="logo">Debate en el Congreso</span>
         </div>
-        <ul class="nav-links">
+        
+        <!-- Botón hamburguesa (solo visible en móvil) -->
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Menú de navegación -->
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="temas.html">Temas</a></li>
             <li><a href="objetivos.html">Objetivos</a></li>
@@ -23,6 +32,9 @@
             <li><a href="proyectos.html">Proyectos</a></li>
         </ul>
     </div>
+    
+    <!-- Overlay para cerrar el menú al hacer clic fuera -->
+    <div class="nav-overlay" id="navOverlay"></div>
 </nav>
 
 <!-- CONTENIDO -->
