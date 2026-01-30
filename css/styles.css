@@ -481,3 +481,147 @@ p {
         gap: 0.8rem;
     }
 }
+/* =========================
+   NAVBAR RESPONSIVE CON HAMBURGUESA
+   Añade esto al final de tu styles.css
+========================= */
+
+/* Botón hamburguesa (oculto por defecto en desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Animación del botón hamburguesa cuando está abierto */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Overlay oscuro de fondo */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE: MÓVIL Y TABLET
+========================= */
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Ocultar menú por defecto y convertirlo en menú lateral */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background-color: white;
+        flex-direction: column;
+        padding: 5rem 2rem 2rem 2rem;
+        gap: 0;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    /* Menú abierto */
+    .nav-links.active {
+        right: 0;
+    }
+    
+    /* Estilo de los enlaces en móvil */
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        color: var(--color-dark);
+        transition: color 0.3s ease, padding-left 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        color: var(--color-secondary);
+        padding-left: 0.5rem;
+    }
+    
+    /* Ajustar logo section en móvil */
+    .logo-section {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .becas-logo {
+        height: 35px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    /* Ajustar padding del navbar en móvil */
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Para tablets en landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+}
